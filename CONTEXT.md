@@ -47,7 +47,7 @@ Create a CQRS + gRPC demo for a workshop presentation. Requirements:
 - In-memory map for read database (simulating Redis/Elasticsearch)
 
 **Structure:**
-```
+```bash
 demo-cqrs-grpc/
 ├── proto/
 │   └── blog.proto          # gRPC service definitions
