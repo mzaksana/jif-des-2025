@@ -215,11 +215,10 @@ cd demo-scaling
 
 ---
 
-## Pre-Workshop Checklist
+## Deps Checklist
 
 - [ ] Go 1.21+ installed
 - [ ] Docker + Docker Compose installed
 - [ ] protoc + protoc-gen-go installed
 - [ ] grpcurl or evans installed
 - [ ] hey or wrk installed for stress testing
-- [ ] Test both demos before presentation
