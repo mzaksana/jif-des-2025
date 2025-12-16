@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  grpc-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/blog.db
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:50051" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # grpcurl client for testing (optional)
+  grpcurl:
+    image: fullstorydev/grpcurl:latest
+    depends_on:
+      - grpc-server
+    entrypoint: ["sleep", "infinity"]
+    profiles:
+      - tools
